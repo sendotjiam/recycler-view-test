@@ -1,20 +1,22 @@
 package com.sendo.recycler_view_test.models;
 
-public class Food {
-    private String foodName;
+public class Photo {
+    private int albumId;
+    private int id;
+    private String title, url;
     private int thumbnail;
 
-    public Food(String foodName, int thumbnail) {
-        this.foodName = foodName;
+    public Photo(String title, int thumbnail) {
+        this.title = title;
         this.thumbnail = thumbnail;
     }
 
     public String getFoodName() {
-        return foodName;
+        return title;
     }
 
     public void setFoodName(String foodName) {
-        this.foodName = foodName;
+        this.title = foodName;
     }
 
     public int getThumbnail() {
@@ -24,4 +26,6 @@ public class Food {
     public void setThumbnail(int thumbnail) {
         this.thumbnail = thumbnail;
     }
+
+
 }

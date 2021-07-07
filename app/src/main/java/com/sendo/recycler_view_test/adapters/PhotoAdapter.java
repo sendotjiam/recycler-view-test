@@ -11,18 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sendo.recycler_view_test.R;
-import com.sendo.recycler_view_test.models.Food;
+import com.sendo.recycler_view_test.models.Photo;
 
 import java.util.ArrayList;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
+public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
 
-    ArrayList<Food> foodArrayList;
+    ArrayList<Photo> photos;
     Context context;
 
-    public FoodAdapter(Context context, ArrayList<Food> foodArrayList) {
+    public PhotoAdapter(Context context, ArrayList<Photo> photos) {
         this.context = context;
-        this.foodArrayList = foodArrayList;
+        this.photos = photos;
     }
 
     @NonNull
@@ -30,20 +30,20 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(context)
-                .inflate(R.layout.item_foods, parent, false);
+                .inflate(R.layout.item_photos, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodAdapter.ViewHolder holder, int position) {
-        Food food = foodArrayList.get(position);
+    public void onBindViewHolder(@NonNull PhotoAdapter.ViewHolder holder, int position) {
+        Photo food = photos.get(position);
         holder.tvFoodName.setText(food.getFoodName());
         holder.ivThumbnail.setImageResource(food.getThumbnail());
     }
 
     @Override
     public int getItemCount() {
-        return foodArrayList.size();
+        return photos.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

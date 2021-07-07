@@ -1,44 +1,42 @@
 package com.sendo.recycler_view_test.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
 import com.sendo.recycler_view_test.R;
-import com.sendo.recycler_view_test.adapters.FoodAdapter;
-import com.sendo.recycler_view_test.models.Food;
+import com.sendo.recycler_view_test.adapters.PhotoAdapter;
+import com.sendo.recycler_view_test.models.Photo;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Food> foodArrayList = new ArrayList<>();
-    RecyclerView rvFoods;
-    FoodAdapter foodAdapter;
+    ArrayList<Photo> photos = new ArrayList<>();
+    RecyclerView rvPhotos;
+    PhotoAdapter photoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Food steak1 = new Food("Steak 1", R.drawable.steak1);
-        Food noodle1 = new Food("Noodle 1", R.drawable.noodles1);
+        Photo steak1 = new Photo("Steak 1a", R.drawable.steak1);
+        Photo noodle1 = new Photo("Noodle 1", R.drawable.noodles1);
 
-        foodArrayList.add(steak1);
-        foodArrayList.add(noodle1);
+        photos.add(steak1);
+        photos.add(noodle1);
 
-        foodAdapter = new FoodAdapter(this, foodArrayList);
+        photoAdapter = new PhotoAdapter(this, photos);
 
-        rvFoods = findViewById(R.id.rv_foods);
+        rvPhotos = findViewById(R.id.rv_photos);
         LinearLayoutManager layoutManager =
                 new LinearLayoutManager(this);
 
-        rvFoods.setLayoutManager(layoutManager);
+        rvPhotos.setLayoutManager(layoutManager);
 
-        rvFoods.setAdapter(foodAdapter);
+        rvPhotos.setAdapter(photoAdapter);
     }
 }
