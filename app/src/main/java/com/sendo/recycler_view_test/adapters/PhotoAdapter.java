@@ -12,17 +12,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sendo.recycler_view_test.R;
 import com.sendo.recycler_view_test.models.Photo;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
 
-    ArrayList<Photo> photos;
+    List<Photo> photos = new ArrayList<>();
     Context context;
 
-    public PhotoAdapter(Context context, ArrayList<Photo> photos) {
+    public PhotoAdapter(Context context) {
         this.context = context;
+    }
+
+    public void setPhotos(List<Photo> photos) {
         this.photos = photos;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -38,7 +44,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull PhotoAdapter.ViewHolder holder, int position) {
         Photo photo = photos.get(position);
         holder.tvTitle.setText(photo.getTitle());
-        holder.ivThumbnail.setImageResource(photo.getThumbnailUrl());
+        Picasso.get()
+                .load(photo.getThumbnailUrl())
+                .into(holder.ivThumbnail);
     }
 
     @Override

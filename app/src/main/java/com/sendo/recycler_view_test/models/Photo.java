@@ -4,9 +4,9 @@ public class Photo {
     private int albumId;
     private int id;
     private String title, url;
-    private int thumbnailUrl;
+    private String thumbnailUrl;
 
-    public Photo(int albumId, int id, String title, String url, int thumbnailUrl) {
+    public Photo(int albumId, int id, String title, String url, String thumbnailUrl) {
         this.albumId = albumId;
         this.id = id;
         this.title = title;
@@ -46,11 +46,11 @@ public class Photo {
         this.url = url;
     }
 
-    public int getThumbnailUrl() {
+    public String getThumbnailUrl() {
         return thumbnailUrl;
     }
 
-    public void setThumbnailUrl(int thumbnailUrl) {
+    public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
 }
