@@ -36,9 +36,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull PhotoAdapter.ViewHolder holder, int position) {
-        Photo food = photos.get(position);
-        holder.tvFoodName.setText(food.getFoodName());
-        holder.ivThumbnail.setImageResource(food.getThumbnail());
+        Photo photo = photos.get(position);
+        holder.tvTitle.setText(photo.getTitle());
+        holder.ivThumbnail.setImageResource(photo.getThumbnailUrl());
     }
 
     @Override
@@ -48,12 +48,12 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivThumbnail;
-        TextView tvFoodName;
+        TextView tvTitle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivThumbnail = itemView.findViewById(R.id.iv_thumbnail);
-            tvFoodName = itemView.findViewById(R.id.tv_food_name);
+            tvTitle = itemView.findViewById(R.id.tv_title);
         }
 
     }

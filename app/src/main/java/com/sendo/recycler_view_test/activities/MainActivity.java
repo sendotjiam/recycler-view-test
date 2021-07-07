@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Photo steak1 = new Photo("Steak 1a", R.drawable.steak1);
-        Photo noodle1 = new Photo("Noodle 1", R.drawable.noodles1);
-
-        photos.add(steak1);
-        photos.add(noodle1);
+//        Photo steak1 = new Photo("Steak 1a", R.drawable.steak1);
+//        Photo noodle1 = new Photo("Noodle 1", R.drawable.noodles1);
+//
+//        photos.add(steak1);
+//        photos.add(noodle1);
 
         photoAdapter = new PhotoAdapter(this, photos);
 
